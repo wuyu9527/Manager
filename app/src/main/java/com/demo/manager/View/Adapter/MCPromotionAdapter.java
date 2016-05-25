@@ -23,8 +23,8 @@ public class MCPromotionAdapter extends BaseAdapter {
     private LayoutInflater inflater;
 
 
-    private int [] images={R.drawable.quanicon3x,R.drawable.xiaoxi3x,R.drawable.daishouhuo3x};
-    private String [] name ={"优惠券","活动公告","广告推送"};
+    private int [] images=null;
+    private String [] name =null;
 
 
     public MCPromotionAdapter(Context context) {

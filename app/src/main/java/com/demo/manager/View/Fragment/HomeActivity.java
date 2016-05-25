@@ -31,7 +31,6 @@ public class HomeActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         fragmentManager = getSupportFragmentManager();
         setContentView(R.layout.activity_horizontal_top_ntb);
-        registerBoradcastReceiver();
         initUI();
         HomeIn();//显示首页
         navigationTabBar.setModelIndex(0);
@@ -214,25 +213,4 @@ public class HomeActivity extends FragmentActivity {
         }
     }
 
-    public void registerBoradcastReceiver(){
-        IntentFilter myIntentFilter = new IntentFilter();
-        myIntentFilter.addAction(ControlCenter.SHOW_CART_URL);
-        myIntentFilter.addAction(ControlCenter.SHOW_HOME_URL);
-        registerReceiver(mBroadcastReceiver, myIntentFilter); //注册广播
-    }
-
-    private BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver(){
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            String action = intent.getAction();
-
-            if(action.equals(ControlCenter.SHOW_CART_URL)){
-                wIn();//显示购物车
-                navigationTabBar.setModelIndex(1);
-            }else if(action.equals(ControlCenter.SHOW_HOME_URL)){
-                HomeIn();//显示首页
-                navigationTabBar.setModelIndex(0);
-            }
-        }
-    };
 }
