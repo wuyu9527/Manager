@@ -1,0 +1,45 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+    <RelativeLayout
+        android:id="@+id/rlItemPromotion"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_list_height"
+        android:background="@color/app_bg_w_color"
+        android:layout_marginTop="8dp"
+        >
+        <ImageView
+            android:id="@+id/ivIconItemPromotion"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/quanicon3x"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:scaleType="centerInside"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/tvItemPromotion"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="left|center"
+            android:text="是什么"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/ivIconItemPromotion"
+            android:layout_toEndOf="@+id/ivIconItemPromotion"
+            android:textSize="20dp"
+            />
+
+        <ImageView
+            android:id="@+id/ivArrowItemPromotion"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/arrowblack3x"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+</LinearLayout>
