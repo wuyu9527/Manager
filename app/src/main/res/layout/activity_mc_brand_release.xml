@@ -199,7 +199,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="生成优惠券"
-        android:background="@drawable/bg_round_rect"
+        android:background="@drawable/selector"
+        android:textColor="@color/cpb_white"
         />
 
 </LinearLayout>

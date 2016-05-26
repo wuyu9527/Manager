@@ -29,4 +29,16 @@
         <attr name="ntb_preview_colors" format="reference" />
     </declare-styleable>
 
+
+    <attr name="borderRadius" format="dimension" />
+    <attr name="roundType">
+        <enum name="circle" value="0" />
+        <enum name="round" value="1" />
+    </attr>
+
+    <declare-styleable name="RoundImageView">
+        <attr name="borderRadius" />
+        <attr name="roundType" />
+    </declare-styleable>
+
 </resources>
