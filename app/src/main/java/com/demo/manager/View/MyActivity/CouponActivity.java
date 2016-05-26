@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.demo.manager.R;
@@ -22,9 +23,18 @@ public class CouponActivity extends Activity {
 
     ListView lv;
     TextView fabuyouhuiquan;
+    RelativeLayout rl;
     private void initUI() {
         lv= (ListView) findViewById(R.id.lvCoupon);
         fabuyouhuiquan= (TextView) findViewById(R.id.fabuyouhuiquan);
+        rl= (RelativeLayout) findViewById(R.id.rlItemCoupon);
+        rl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(CouponActivity.this,CouponInfoActivity.class);
+                startActivity(intent);
+            }
+        });
         fabuyouhuiquan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -32,5 +42,6 @@ public class CouponActivity extends Activity {
                 startActivity(intent);
             }
         });
+
     }
 }

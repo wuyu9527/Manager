@@ -5,6 +5,7 @@
     android:orientation="vertical">
 
     <RelativeLayout
+        android:id="@+id/rlCoupon"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
@@ -22,26 +23,29 @@
 
         <TextView
             android:id="@+id/tvCommonTitle"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
             android:gravity="center"
             android:padding="5dip"
             android:text="优惠券详情"
             android:textColor="#FFFFFF"
-            android:textSize="18dp" />
+            android:textSize="18dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
 
 
         <TextView
-            android:id="@+id/tvCommonAssistant"
-            android:layout_width="match_parent"
+            android:id="@+id/fabuyouhuiquan"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
             android:gravity="right"
             android:padding="5dip"
             android:text=""
             android:textColor="#FFFFFF"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
 
 
     </RelativeLayout>
