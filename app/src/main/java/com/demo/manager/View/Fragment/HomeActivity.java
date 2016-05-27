@@ -2,6 +2,7 @@ package com.demo.manager.View.Fragment;
 
 
 
+import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -26,11 +27,14 @@ import java.util.Random;
  * Created by Android on 2016/5/17. 主页中心
  */
 public class HomeActivity extends FragmentActivity {
+    public static Activity instance;
+
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         fragmentManager = getSupportFragmentManager();
         setContentView(R.layout.activity_horizontal_top_ntb);
+        this.instance=HomeActivity.instance;
         initUI();
         HomeIn();//显示首页
         navigationTabBar.setModelIndex(0);
