@@ -191,8 +191,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor>, 
             // perform the user login attempt.
             //showProgress(true);
             loginP = new LoginP(this);
-            HttpApi httpApi=new HttpApi(this);
-            loginP.myLoadUser(str, password,httpApi);
+            loginP.myLoadUser(str, password);
 //            mAuthTask = new UserLoginTask(str, password,type);
 //            mAuthTask.execute((Void) null);
         }
@@ -329,12 +328,10 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor>, 
     @Override//Activity储存
     public void setUser(String id, String name, String password) {
         user = new User(id, name, password);
-        Log.i("whx",user.getInKey());
         if (user.getInKey()!=null){
-            myGengXing();
             circularButton1.setProgress(100);
+            myGengXing();
         }else {
-            Log.i("whx","setuser");
             circularButton1.setProgress(-1);
             if (myError!=null) {
                 Toast.makeText(LoginActivity.this, myError, Toast.LENGTH_LONG).show();
@@ -355,7 +352,6 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor>, 
         }
         this.myError = err;
         handler.sendEmptyMessage(0);
-
     }
 
     Handler handler=new Handler(){
@@ -388,7 +384,6 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor>, 
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.email_sign_in_button:
-
                 attemptLogin(SignIn);
                 if (cancel){
                     circularButton1.setProgress(0);

@@ -41,8 +41,8 @@ public class LoginP {
         login.getPassWord();
 
     }
-    public void myLoadUser(String name, String passwrod, HttpApi httpApi) {
-        userM.mylogin(name, passwrod,httpApi)
+    public void myLoadUser(String name, String passwrod) {
+        userM.mylogin(name, passwrod)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer() {

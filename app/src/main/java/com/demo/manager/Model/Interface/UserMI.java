@@ -15,4 +15,5 @@ public interface UserMI {
     void setPaasWord(String passWord);
 
 
+    Observable mylogin(String name, String password);
 }

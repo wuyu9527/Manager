@@ -17,6 +17,7 @@ import com.demo.manager.R;
 import com.demo.manager.View.Adapter.MCPromotionAdapter;
 import com.demo.manager.View.Interface.Promotion;
 import com.demo.manager.View.MyActivity.CouponActivity;
+import com.demo.manager.View.MyActivity.NoticeActivity;
 
 /**
  * Created by Android on 2016/5/24. 促销
@@ -42,11 +43,12 @@ public class MCPromotionFragment extends Fragment implements Promotion{
                 Intent intent = null;
                 switch (position){
                     case 0:
-                        Log.i("whx","0");
                         intent=new Intent(getContext(), CouponActivity.class);
                         startActivity(intent);
                         break;
                     case 1:
+                        intent=new Intent(getContext(), NoticeActivity.class);
+                        startActivity(intent);
                         Log.i("whx","1");
                         break;
                     case 2:

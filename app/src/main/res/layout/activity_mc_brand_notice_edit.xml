@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -7,6 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
 
         <RelativeLayout
             android:id="@+id/rlCoupon"
@@ -33,7 +35,7 @@
                 android:layout_centerVertical="true"
                 android:gravity="center"
                 android:padding="5dip"
-                android:text="发布优惠券"
+                android:text="编辑活动"
                 android:textColor="#FFFFFF"
                 android:textSize="18dp" />
 
@@ -46,8 +48,9 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:gravity="right"
+                android:layout_marginRight="5dp"
                 android:padding="5dip"
-                android:text=""
+                android:text="保存"
                 android:textColor="#FFFFFF"
                 android:textSize="20dp" />
 
@@ -64,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:text="优惠券名称"
+                android:text="活动名称"
                 android:textColor="@color/cpb_blue"
                 android:textSize="20dp" />
 
@@ -86,7 +89,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:text="金额"
+                android:text="活动标签"
                 android:textColor="@color/cpb_blue"
                 android:textSize="20dp" />
 
@@ -96,6 +99,15 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:hint="500" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="标签之间以分号（;）隔开区分"
+                android:textColor="@color/app_black"
+                android:textSize="16dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -108,7 +120,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:text="使用说明"
+                android:text="活动内容"
                 android:textColor="@color/cpb_blue"
                 android:textSize="20dp" />
 
@@ -118,41 +130,83 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:gravity="left"
-                android:hint="500"
-                android:maxLength="200"
+                android:hint="你是春天里的那一抹鹅黄，窜上我心灵的枝头，从此，我的生命充满了绿意。沏一壶春色，等你。我们在这个春天，一起盎然。
+
+　　看见燕子双飞于天空，心中有一种惊喜。是否，我们也该衔泥做窝？
+
+　　你每日在爱的小屋里衔泥筑巢，快乐得如一只雌燕，只为等我归巢时那一刻的惊喜。爱，是一种坚持。是平淡的相濡以沫，是寻常的细水长流，是精心的呵护与珍惜。
+
+　　有爱的日子，每天都是一朵花开。无数的日子，连接在一起，就会繁花满枝。再过几天，就是相识520天了。爱情，是用来铭记的。520，我爱你！镌刻在骨头上，融进血液里，烙印在每个细胞中，只因那是灵魂深处的爱。
+
+　　记得那日初相遇，是11月18日。你我一见如故。我说我的潇湘很美，你说你的温哥华也很美。我说美丽的心才会有美丽的风景，也一定会写出美丽的文字。
+
+　　一年，诗词为裙，散文为裳，你优雅而明媚。
+
+　　你是衣襟带花的女子。暗香盈袖。
+
+　　卧竹，听雨，闲看白云。你说，你在樱花树下等我。与我相约去看爱的天梯。
+
+　　樱花烂漫，开了又谢了。这个春天，我的心里、眼里，只有樱花。每一棵樱花树下，都有一个爱情故事，或浪漫，或凄美。
+
+　　唯有我们的，最为痴缠。
+
+　　相隔一万多里的距离，隔着太平洋的波涛，隔着白天黑夜的时差。不同的国籍，不同的身份，丝毫没有阻隔两颗相爱的灵魂。原来真爱，只是心有灵犀一点通的感觉，是心心相印的快乐，是灵与灵交融的幸福。
+
+　　春风十里，不如你。
+
+　　林徽因说：你是一树一树的花开，是燕在梁间的呢喃。你是爱，是暖，是希望，是人间的四月天。
+
+　　你亦是我的人间四月天。
+
+　　枕着你的香息，念着你的名字，入眠。梦境里，樱花浪漫……"
+                android:maxLength="4000"
                 android:minLines="5" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:text="订单满"
-                android:textColor="@color/cpb_blue"
-                android:textSize="20dp" />
-
-            <EditText
-                android:layout_width="120dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:gravity="center"
-                android:hint="500" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:text="可用"
+                android:text="封面图片"
                 android:textColor="@color/cpb_blue"
                 android:textSize="20dp" />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/icon" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="内容图片"
+                android:textColor="@color/cpb_blue"
+                android:textSize="20dp" />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="left"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/icon" />
         </LinearLayout>
 
         <TextView
@@ -160,7 +214,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-            android:text="使用期限"
+            android:text="活动时间"
             android:textColor="@color/cpb_blue"
             android:textSize="20dp" />
 
@@ -198,13 +252,6 @@
 
         </LinearLayout>
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/selector"
-            android:text="生成优惠券"
-            android:textColor="@color/cpb_white" />
 
     </LinearLayout>
 

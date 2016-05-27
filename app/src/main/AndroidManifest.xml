@@ -45,9 +45,7 @@
         <activity
             android:name=".View.Fragment.HomeActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:screenOrientation="portrait">
-
-        </activity>
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".View.MyActivity.CouponActivity"
             android:configChanges="orientation|keyboardHidden"
@@ -63,6 +61,16 @@
 
         <activity
             android:name=".View.MyActivity.NoticeActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".View.MyActivity.NotiveInfoActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".View.MyActivity.ReleaseActivity"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="portrait" />
     </application>
