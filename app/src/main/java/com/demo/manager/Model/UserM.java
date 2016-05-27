@@ -1,5 +1,7 @@
 package com.demo.manager.Model;
 
+import android.util.Log;
+
 import com.demo.manager.Bean.User;
 import com.demo.manager.Model.Interface.UserMI;
 import com.demo.manager.Bean.ControlCenter;
@@ -7,6 +9,11 @@ import com.demo.manager.Util.HttpApi;
 
 import okhttp3.FormBody;
 import rx.Observable;
+import rx.Observer;
+import rx.Single;
+import rx.Subscription;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action1;
 
 /**
  * Created by Android on 2016/5/16.
@@ -27,9 +34,8 @@ public class UserM implements UserMI {
         this.password=passWord;
     }
 
-    @Override
-    public Observable mylogin(String name, String password) {
-        HttpApi httpApi = new HttpApi();
+
+    public Observable mylogin(String name, String password,HttpApi httpApi) {
         FormBody formBody=new FormBody.Builder().add("name", name).add("password", password).build();
         return httpApi.myHttpPost(ControlCenter.login,formBody);
     }

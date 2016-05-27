@@ -33,6 +33,7 @@ import android.widget.Toast;
 import com.demo.manager.Bean.User;
 import com.demo.manager.P.LoginP;
 import com.demo.manager.R;
+import com.demo.manager.Util.HttpApi;
 import com.demo.manager.View.Fragment.HomeActivity;
 import com.demo.manager.View.Interface.Login;
 import com.demo.manager.View.Interface.MyError;
@@ -80,7 +81,6 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor>, 
         // Set up the login form.
         mNameView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
-
         mPasswordView = (EditText) findViewById(R.id.password);
 
 
@@ -191,7 +191,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor>, 
             // perform the user login attempt.
             //showProgress(true);
             loginP = new LoginP(this);
-            loginP.myLoadUser(str, password);
+            HttpApi httpApi=new HttpApi(this);
+            loginP.myLoadUser(str, password,httpApi);
 //            mAuthTask = new UserLoginTask(str, password,type);
 //            mAuthTask.execute((Void) null);
         }
@@ -308,10 +309,11 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor>, 
     }
 
     public void myGengXing() {
+        Log.i("whx",user.getInKey());
         Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
         intent.putExtra("id", user.getId());
         startActivity(intent);
-        finish();
+        LoginActivity.this.finish();
     }
 
     @Override
@@ -327,6 +329,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor>, 
     @Override//Activity储存
     public void setUser(String id, String name, String password) {
         user = new User(id, name, password);
+        Log.i("whx",user.getInKey());
         if (user.getInKey()!=null){
             myGengXing();
             circularButton1.setProgress(100);
@@ -352,13 +355,13 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor>, 
         }
         this.myError = err;
         handler.sendEmptyMessage(0);
+
     }
 
     Handler handler=new Handler(){
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-
             circularButton1.setProgress(-1);
             mPasswordView.setError(myError);
             mPasswordView.requestFocus();

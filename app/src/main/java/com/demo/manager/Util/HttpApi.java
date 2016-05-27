@@ -1,19 +1,20 @@
 package com.demo.manager.Util;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 
-import com.demo.manager.View.Interface.Login;
-import com.google.gson.Gson;
+import com.demo.manager.Bean.User;
+
+import java.io.IOException;
 
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
-import okhttp3.RequestBody;
 import okhttp3.Response;
 import rx.Observable;
+import rx.Observable.Transformer;
 import rx.Subscriber;
-import rx.functions.Action1;
 import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 
@@ -50,9 +51,7 @@ public class HttpApi<T> {
      */
 
     public HttpApi() {
-        if (client == null) {
-            client = new OkHttpClient();
-        }
+        client = new OkHttpClient();
     }
 
     public HttpApi(Context context) {
@@ -82,10 +81,8 @@ public class HttpApi<T> {
                 try {
                     Response response = client.newCall(request).execute();
                     if (response.isSuccessful()) {
-                        Log.i("whx", "1");
                         return response.body().string();
                     } else {
-                        Log.i("whx", "@");
                         return NETWORKLOST;
                     }
                 } catch (Exception e) {
@@ -100,34 +97,35 @@ public class HttpApi<T> {
     /**
      * 后返回泛型
      */
-    public Observable myHttpPost(String url,FormBody body){
-        Request request= new Request.Builder().post(body).url(url).build();
-        return myHttpAll(request);
-    }
-    public Observable myHttpGet(String url){
-        Request request= new Request.Builder().url(url).build();
+    public Observable myHttpPost(String url, FormBody body) {
+        Request request = new Request.Builder().post(body).url(url).build();
         return myHttpAll(request);
     }
 
-    public Observable myHttpAll(final Request request){
+    public Observable myHttpGet(String url) {
+        Request request = new Request.Builder().url(url).build();
+        return myHttpAll(request);
+    }
+
+    public Observable myHttpAll(final Request request) {
         return Observable.create(new Observable.OnSubscribe<String>() {
-            @Override public void call(final Subscriber<? super String> subscriber) {
+            @Override
+            public void call(Subscriber<? super String> subscriber) {
                 try {
                     Response response = client.newCall(request).execute();
                     if (response.isSuccessful()) {
                         subscriber.onNext(response.body().string());
                     } else {
-                        Log.i("error",response.body().string());
-                        subscriber.onError(new Exception("error"));
+                        subscriber.onNext(NETWORKLOST);
                     }
                 } catch (Exception e) {
                     subscriber.onError(e);
+                    throw new IllegalArgumentException(e.getMessage());
                 }
+                subscriber.onStart();
             }
         });
     }
-
-
 
     /**
      *Observable.create(new Observable.OnSubscribe<String>() {

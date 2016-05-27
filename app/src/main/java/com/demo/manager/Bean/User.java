@@ -6,12 +6,13 @@ package com.demo.manager.Bean;
 public class User {
 
     public User() {
+
     }
 
     public User(String id, String name, String inKey) {
-        this.id = id;
-        this.name = name;
-        InKey = inKey;
+        setId(id);
+        setName(name);
+        setInKey(inKey);
     }
 
     /**

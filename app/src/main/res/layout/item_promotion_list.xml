@@ -37,7 +37,7 @@
             android:id="@+id/ivArrowItemPromotion"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:src="@drawable/arrowblack3x"
+            android:src="@drawable/arrowblackcx"
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />

@@ -73,7 +73,7 @@ public class MCPromotionAdapter extends BaseAdapter {
 
         holder.ivIconItemPromotion.setImageResource(images[position]);
         holder.tvItemPromotion.setText(name[position]);
-        holder.ivArrowItemPromotion.setImageResource(R.drawable.arrowblack3x);
+        holder.ivArrowItemPromotion.setImageResource(R.drawable.arrowblackcx);
         return convertView;
     }
 

@@ -1,22 +1,22 @@
 package com.demo.manager.P;
 
+import android.app.Activity;
 import android.content.Context;
-import android.util.JsonReader;
+import android.content.pm.ActivityInfo;
+import android.util.AndroidException;
 import android.util.Log;
 
 
 import com.demo.manager.Bean.User;
 import com.demo.manager.Model.UserM;
+import com.demo.manager.Util.HttpApi;
 import com.demo.manager.View.Interface.Login;
-import com.demo.manager.View.Interface.MyError;
 import com.google.gson.Gson;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import rx.Observable;
 import rx.Observer;
-import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.schedulers.Schedulers;
@@ -41,30 +41,28 @@ public class LoginP {
         login.getPassWord();
 
     }
-    public void myLoadUser(String name, String passwrod) {
-        userM.mylogin(name, passwrod)
+    public void myLoadUser(String name, String passwrod, HttpApi httpApi) {
+        userM.mylogin(name, passwrod,httpApi)
                 .subscribeOn(Schedulers.io())
-                .observeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer() {
                     @Override
                     public void onCompleted() {//订阅者终结调用
-
                     }
-
                     @Override
                     public void onError(Throwable e) {
-
                     }
-
                     @Override
                     public void onNext(Object o) {
-                        Log.i("whx",o.toString());
                         User user = new Gson().fromJson(o.toString(),User.class);
-                        if (user.getName()!=null) {
+                        if (user!=null) {
                             login.setUser(user.getId(), user.getName(), user.getInKey());
                         }else {
                             try {
                                 JSONObject obj =new JSONObject(o.toString());
+                                if (o==null){
+                                    login.setMyError("数据解析错误");
+                                }
                                 login.setMyError(obj.optString("err"));
                             } catch (JSONException e) {
                                 e.printStackTrace();
@@ -72,5 +70,9 @@ public class LoginP {
                         }
                     }
                 });
+
     }
+
+
+
 }

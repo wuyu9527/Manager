@@ -9,7 +9,7 @@ import com.demo.manager.R;
 import com.demo.manager.Util.DateTimePickDialogUtil;
 
 /**
- * Created by Android on 2016/5/25.
+ * Created by Android on 2016/5/25. 发布优惠券
  */
 public class PublishCouponsActivity extends Activity {
 

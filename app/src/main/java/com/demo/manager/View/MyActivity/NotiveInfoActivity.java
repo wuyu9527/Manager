@@ -6,12 +6,12 @@ import android.os.Bundle;
 import com.demo.manager.R;
 
 /**
- * Created by Android on 2016/5/26.  优惠券详情
+ * Created by Android on 2016/5/26.
  */
-public class CouponInfoActivity extends Activity {
+public class NotiveInfoActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mc_brand_info);
+        setContentView(R.layout.activity_mc_brand_notice_info);
     }
 }
