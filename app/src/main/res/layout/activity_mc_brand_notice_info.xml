@@ -40,7 +40,7 @@
 
 
             <TextView
-                android:id="@+id/fabuyouhuiquan"
+                android:id="@+id/tvNoticeInfoEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
@@ -68,12 +68,14 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/tvNameNoticeInfo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="周年庆感恩回馈活动"
                     android:textSize="30dp" />
 
                 <TextView
+                    android:id="@+id/tvTagsNoticeInfo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="活动标签:周年促销 回馈客户 聚划算 全场满100减50"
@@ -88,6 +90,7 @@
                     />
 
                 <TextView
+                    android:id="@+id/tvTimeNoticeInfo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="活动时间:2015-10-1至2015-10-2"
@@ -103,6 +106,7 @@
                     android:background="@color/cpb_blue" />
 
                 <TextView
+                    android:id="@+id/tvTextNoticeInfo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="你是春天里的那一抹鹅黄，窜上我心灵的枝头，从此，我的生命充满了绿意。沏一壶春色，等你。我们在这个春天，一起盎然。

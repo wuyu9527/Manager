@@ -72,6 +72,7 @@
                 android:textSize="20dp" />
 
             <EditText
+                android:id="@+id/etNoticeName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -94,6 +95,7 @@
                 android:textSize="20dp" />
 
             <EditText
+                android:id="@+id/etTagsNoticeInfo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -125,6 +127,7 @@
                 android:textSize="20dp" />
 
             <EditText
+                android:id="@+id/etTextNoticeInfo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -227,7 +230,7 @@
 
 
             <EditText
-                android:id="@+id/inputDate"
+                android:id="@+id/niEditInputDate1"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:focusable="false"
@@ -243,7 +246,7 @@
                 android:textSize="20dp" />
 
             <EditText
-                android:id="@+id/inputDate2"
+                android:id="@+id/niEditInputDate2"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:focusable="false"

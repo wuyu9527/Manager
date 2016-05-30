@@ -10,7 +10,7 @@ import android.widget.TextView;
 import com.demo.manager.R;
 
 /**
- * Created by Android on 2016/5/26.
+ * Created by Android on 2016/5/26.活动公告
  */
 public class NoticeActivity extends Activity {
     @Override
@@ -26,7 +26,7 @@ public class NoticeActivity extends Activity {
         rl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(NoticeActivity.this,NotiveInfoActivity.class);
+                Intent intent=new Intent(NoticeActivity.this,NoticeInfoActivity.class);
                 startActivity(intent);
             }
         });

@@ -10,14 +10,19 @@ import android.content.IntentFilter;
 import android.graphics.Color;
 import android.os.Bundle;
 
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.widget.Toast;
 
 import com.demo.manager.Bean.ControlCenter;
 import com.demo.manager.R;
+import com.demo.manager.View.MyActivity.ExitWindow;
 import com.demo.mylibrary.View.NavigationTabBar;
 
 import java.util.ArrayList;
@@ -27,14 +32,15 @@ import java.util.Random;
  * Created by Android on 2016/5/17. 主页中心
  */
 public class HomeActivity extends FragmentActivity {
-    public static Activity instance;
+
+    public static Activity instance;//其他Activity获取上下文
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         fragmentManager = getSupportFragmentManager();
         setContentView(R.layout.activity_horizontal_top_ntb);
-        this.instance=HomeActivity.instance;
+        instance=this;
         initUI();
         HomeIn();//显示首页
         navigationTabBar.setModelIndex(0);
@@ -214,6 +220,37 @@ public class HomeActivity extends FragmentActivity {
         }
         if (su != null) {
             transaction.hide(su);
+        }
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            exit();
+            return false;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    // 定义一个变量，来标识是否退出
+    private static boolean isExit = false;
+    Handler exitHandler = new Handler() {
+
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            isExit = false;
+        }
+    };
+    private void exit() {
+        if (!isExit) {
+            isExit = true;
+            Toast.makeText(getApplicationContext(), "再按一次退出程序",
+                    Toast.LENGTH_SHORT).show();
+            exitHandler.sendEmptyMessageDelayed(0, 2000);
+        } else {
+            Intent intent=new Intent(this, ExitWindow.class);
+            startActivity(intent);
         }
     }
 

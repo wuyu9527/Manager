@@ -10,6 +10,7 @@ import android.widget.Toast;
 import com.demo.manager.R;
 import com.demo.manager.View.Fragment.HomeActivity;
 
+
 /**
  * Created by Android on 2016/5/27.
  */
@@ -26,7 +27,6 @@ public class ExitWindow extends Activity {
 
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
                 Toast.makeText(getApplicationContext(), "提示：点击窗口外部关闭窗口！",
                         Toast.LENGTH_SHORT).show();
             }
@@ -45,6 +45,7 @@ public class ExitWindow extends Activity {
 
     public void exitbutton0(View v) {
         this.finish();
-        HomeActivity.instance.finish();//关闭Main 这个Activity
+
+        HomeActivity.instance.finishAffinity();
     }
 }

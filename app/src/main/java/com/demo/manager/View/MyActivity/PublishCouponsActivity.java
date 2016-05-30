@@ -14,11 +14,7 @@ import com.demo.manager.Util.DateTimePickDialogUtil;
 public class PublishCouponsActivity extends Activity {
 
 
-    private EditText startDateTime;
-    private EditText endDateTime;
 
-    private String initStartDateTime = ""; // 初始化开始时间
-    private String initEndDateTime = ""; // 初始化结束时间
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,11 +28,16 @@ public class PublishCouponsActivity extends Activity {
 
     }
 
+    private EditText startDateTime;
+    private EditText endDateTime;
+
+    private String initStartDateTime = ""; // 初始化开始时间
+    private String initEndDateTime = ""; // 初始化结束时间
     private void myTime() {
 
         // 两个输入框
-        startDateTime = (EditText) findViewById(R.id.inputDate);
-        endDateTime = (EditText) findViewById(R.id.inputDate2);
+        startDateTime = (EditText) findViewById(R.id.pcInputDate1);
+        endDateTime = (EditText) findViewById(R.id.pcInputDate2);
 
         startDateTime.setText(initStartDateTime);
         endDateTime.setText(initEndDateTime);

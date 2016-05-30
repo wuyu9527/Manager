@@ -13,7 +13,7 @@ import java.util.TimerTask;
 import java.util.concurrent.ExecutionException;
 
 /**
- * Created by Android on 2016/5/23.
+ * Created by Android on 2016/5/23. 封面
  */
 public class CoverActivity extends Activity {
     @Override

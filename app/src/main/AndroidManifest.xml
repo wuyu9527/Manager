@@ -65,13 +65,22 @@
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".View.MyActivity.NotiveInfoActivity"
+            android:name=".View.MyActivity.NoticeInfoActivity"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="portrait" />
 
         <activity
             android:name=".View.MyActivity.ReleaseActivity"
             android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".View.MyActivity.NoticeInfoEditActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".View.MyActivity.ExitWindow"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/MyDialogStyle"
             android:screenOrientation="portrait" />
     </application>
 
