@@ -147,7 +147,7 @@ public class HomeActivity extends FragmentActivity {
     private FragmentManager fragmentManager;
 
 
-    /**  定义首页、分类、购物车、我的Fragment */
+    /**  营销中心，生意圈，工作台，设置 */
     private MarketingCenterFragment mca;
     private BusinessCircleFragment bc;
     private WorkbenchFragment w;

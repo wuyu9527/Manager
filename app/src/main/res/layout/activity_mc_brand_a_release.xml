@@ -198,18 +198,18 @@
 
         </LinearLayout>
 
-        <GridView
+        <com.demo.mylibrary.View.myGridView
             android:id="@+id/gvARelease1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:numColumns="auto_fit"
-            android:columnWidth="80dp"
+            android:columnWidth="140dp"
             android:stretchMode="columnWidth"
-            android:visibility="gone"
+            android:layout_margin="10dp"
             />
 
 
-        <GridView
+        <com.demo.mylibrary.View.myGridView
             android:id="@+id/gvARelease2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -217,6 +217,7 @@
             android:columnWidth="80dp"
             android:stretchMode="columnWidth"
             android:visibility="gone"
+            android:layout_margin="10dp"
             />
 
         <TextView

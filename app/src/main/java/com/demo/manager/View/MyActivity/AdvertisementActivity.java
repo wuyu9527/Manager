@@ -27,7 +27,8 @@ public class AdvertisementActivity extends Activity {
         rlAdvertisement.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent=new Intent(AdvertisementActivity.this,AInfoActivity.class);
+                startActivity(intent);
             }
         });
         fabuguanggao.setOnClickListener(new View.OnClickListener() {
