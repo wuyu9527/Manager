@@ -16,6 +16,7 @@ import com.demo.manager.P.PromotionP;
 import com.demo.manager.R;
 import com.demo.manager.View.Adapter.MCPromotionAdapter;
 import com.demo.manager.View.Interface.Promotion;
+import com.demo.manager.View.MyActivity.AdvertisementActivity;
 import com.demo.manager.View.MyActivity.CouponActivity;
 import com.demo.manager.View.MyActivity.NoticeActivity;
 
@@ -49,10 +50,10 @@ public class MCPromotionFragment extends Fragment implements Promotion{
                     case 1:
                         intent=new Intent(getContext(), NoticeActivity.class);
                         startActivity(intent);
-                        Log.i("whx","1");
                         break;
                     case 2:
-                        Log.i("whx","2");
+                        intent=new Intent(getContext(), AdvertisementActivity.class);
+                        startActivity(intent);
                         break;
                 }
             }

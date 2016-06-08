@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:round="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <LinearLayout
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-
         <RelativeLayout
-            android:id="@+id/rlCoupon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
@@ -35,22 +34,21 @@
                 android:layout_centerVertical="true"
                 android:gravity="center"
                 android:padding="5dip"
-                android:text="编辑活动"
+                android:text="发布广告"
                 android:textColor="#FFFFFF"
                 android:textSize="18dp" />
 
 
             <TextView
-                android:id="@+id/fabuyouhuiquan"
+                android:id="@+id/fabuguanggao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:gravity="right"
-                android:layout_marginRight="5dp"
                 android:padding="5dip"
-                android:text="保存"
+                android:text=""
                 android:textColor="#FFFFFF"
                 android:textSize="20dp" />
 
@@ -67,12 +65,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:text="活动名称"
+                android:text="广告标题"
                 android:textColor="@color/cpb_blue"
                 android:textSize="20dp" />
 
             <EditText
-                android:id="@+id/etNoticeName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -90,26 +87,20 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:text="活动标签"
+                android:text="标题描述"
                 android:textColor="@color/cpb_blue"
+
                 android:textSize="20dp" />
 
             <EditText
-                android:id="@+id/etTagsNoticeInfo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:hint="500" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:text="标签之间以分号（;）隔开区分"
-                android:textColor="@color/app_black"
-                android:textSize="16dp" />
+                android:gravity="left|top"
+                android:hint="描述在标题下方，输入限制50字"
+                android:maxLength="100"
+                android:minLines="4" />
         </LinearLayout>
 
         <LinearLayout
@@ -122,19 +113,18 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:text="活动内容"
+                android:text="广告内容"
                 android:textColor="@color/cpb_blue"
                 android:textSize="20dp" />
 
             <EditText
-                android:id="@+id/etTextNoticeInfo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:gravity="left"
                 android:hint=""
-                android:maxLength="4000"
+                android:maxLength="2000"
                 android:minLines="5" />
         </LinearLayout>
 
@@ -148,7 +138,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:text="封面图片"
+                android:text="广告封面"
                 android:textColor="@color/cpb_blue"
                 android:textSize="20dp" />
 
@@ -171,7 +161,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:text="内容图片"
+                android:text="广告内容图"
                 android:textColor="@color/cpb_blue"
                 android:textSize="20dp" />
 
@@ -184,12 +174,57 @@
                 android:src="@drawable/icon" />
         </LinearLayout>
 
+
+        <LinearLayout
+            android:id="@+id/llLettingDown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/bg_round_rect"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/etLettingDown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/bg_round_rect"
+                android:drawableRight="@drawable/downarrow2x"
+                android:focusable="false"
+                android:padding="3dp"
+                android:text="按分组"
+                android:textSize="20dp" />
+
+
+        </LinearLayout>
+
+        <GridView
+            android:id="@+id/gvARelease1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="auto_fit"
+            android:columnWidth="80dp"
+            android:stretchMode="columnWidth"
+            android:visibility="gone"
+            />
+
+
+        <GridView
+            android:id="@+id/gvARelease2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="auto_fit"
+            android:columnWidth="80dp"
+            android:stretchMode="columnWidth"
+            android:visibility="gone"
+            />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-            android:text="活动时间"
+            android:text="推送日期"
             android:textColor="@color/cpb_blue"
             android:textSize="20dp" />
 
@@ -202,7 +237,7 @@
 
 
             <EditText
-                android:id="@+id/niEditInputDate1"
+                android:id="@+id/pcInputDate1"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:focusable="false"
@@ -215,19 +250,29 @@
                 android:layout_marginTop="10dp"
                 android:text="至"
                 android:textColor="@color/cpb_blue"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:visibility="gone" />
 
             <EditText
-                android:id="@+id/niEditInputDate2"
+                android:id="@+id/pcInputDate2"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:focusable="false"
-                android:inputType="none" />
+                android:inputType="none"
+                android:visibility="gone" />
 
 
         </LinearLayout>
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/selector"
+            android:text="生成优惠券"
+            android:textColor="@color/cpb_white" />
 
     </LinearLayout>
+
 
 </ScrollView>

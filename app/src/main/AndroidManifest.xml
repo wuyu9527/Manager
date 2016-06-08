@@ -38,22 +38,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".View.MyActivity.LoginActivity"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".View.Fragment.HomeActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".View.MyActivity.CouponActivity"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".View.MyActivity.PublishCouponsActivity"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".View.MyActivity.CouponInfoActivity"
             android:configChanges="orientation|keyboardHidden"
@@ -74,14 +79,25 @@
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="portrait" />
 
-        <activity android:name=".View.MyActivity.NoticeInfoEditActivity"
+        <activity
+            android:name=".View.MyActivity.NoticeInfoEditActivity"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="portrait" />
 
-        <activity android:name=".View.MyActivity.ExitWindow"
+        <activity
+            android:name=".View.MyActivity.AdvertisementActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:theme="@style/MyDialogStyle"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".View.MyActivity.AReleaseActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".View.MyActivity.ExitWindow"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyDialogStyle" />
     </application>
 
 </manifest>
