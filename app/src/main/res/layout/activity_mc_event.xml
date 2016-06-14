@@ -17,10 +17,27 @@
             android:gravity="center"
             android:text="今天 12:12:12"
             android:textSize="20dp" />
+        <com.demo.mylibrary.Refresh.CanRefreshLayout
+            android:id="@+id/refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        <com.demo.mylibrary.Refresh.yalantis.YalantisPhoenixRefreshView
+            android:id="@id/can_refresh_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <com.demo.mylibrary.Refresh.storehouse.StoreHouseRefreshView
+            android:id="@id/can_refresh_footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <ListView
-            android:id="@+id/lvEvent"
+            android:id="@+id/lv"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
+        </com.demo.mylibrary.Refresh.CanRefreshLayout>
     </LinearLayout>
 </LinearLayout>

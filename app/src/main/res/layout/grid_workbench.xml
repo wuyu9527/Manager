@@ -2,22 +2,25 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     >
 
     <ImageView
+        android:id="@+id/ivGWorkbench"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:scaleType="fitXY"
         android:src="@drawable/fengmian"
-        android:id="@+id/imageView" />
+         />
 
     <TextView
+        android:id="@+id/tvGWorkbench"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="名字"
         android:layout_marginLeft="14dp"
         android:layout_marginStart="14dp"
-        android:layout_below="@+id/imageView"
+        android:layout_below="@+id/ivGWorkbench"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 

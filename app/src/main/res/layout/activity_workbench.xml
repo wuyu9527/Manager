@@ -53,17 +53,18 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
         <GridView
             android:id="@+id/gvWork1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:columnWidth="80dp"
+            android:gravity="center"
+            android:padding="3dp"
             android:numColumns="auto_fit"
+            android:background="@color/cpb_blue"
             android:stretchMode="columnWidth"/>
-
-
 
         <GridView
             android:id="@+id/gvWork2"
@@ -71,10 +72,9 @@
             android:layout_height="wrap_content"
             android:columnWidth="80dp"
             android:numColumns="auto_fit"
+            android:gravity="center"
+            android:padding="3dp"
             android:stretchMode="columnWidth"/>
-
-
-
     </LinearLayout>
 
 

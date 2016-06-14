@@ -42,8 +42,8 @@ public class HomeActivity extends FragmentActivity {
         setContentView(R.layout.activity_horizontal_top_ntb);
         instance=this;
         initUI();
-        HomeIn();//显示首页
-        navigationTabBar.setModelIndex(0);
+        wIn();//显示首页
+        navigationTabBar.setModelIndex(1);
     }
     NavigationTabBar navigationTabBar = null;
     private void initUI() {
@@ -102,7 +102,7 @@ public class HomeActivity extends FragmentActivity {
         navigationTabBar.setOnTabBarSelectedIndexListener(new NavigationTabBar.OnTabBarSelectedIndexListener() {
             @Override
             public void onStartTabSelected(final NavigationTabBar.Model model, final int index) {
-                Log.i("whx",index+"");
+                Log.i("whx",index+":index");
                 if (index==0){
                     HomeIn();
                 }else if (index==1){
@@ -123,7 +123,7 @@ public class HomeActivity extends FragmentActivity {
         findViewById(R.id.mask).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
-                Log.i("whx",v.getId()+"");
+                Log.i("whx",v.getId()+":findViewById");
                 for (int i = 0; i < navigationTabBar.getModels().size(); i++) {
                     final NavigationTabBar.Model model = navigationTabBar.getModels().get(i);
                     navigationTabBar.postDelayed(new Runnable() {

@@ -19,11 +19,12 @@ import com.demo.manager.View.Interface.Promotion;
 import com.demo.manager.View.MyActivity.AdvertisementActivity;
 import com.demo.manager.View.MyActivity.CouponActivity;
 import com.demo.manager.View.MyActivity.NoticeActivity;
+import com.demo.mylibrary.Refresh.CanRefreshLayout;
 
 /**
  * Created by Android on 2016/5/24. 促销
  */
-public class MCPromotionFragment extends Fragment implements Promotion{
+public class MCPromotionFragment extends Fragment implements Promotion,CanRefreshLayout.OnRefreshListener, CanRefreshLayout.OnLoadMoreListener{
     View view;
     ListView lv;
     @Nullable
@@ -35,7 +36,7 @@ public class MCPromotionFragment extends Fragment implements Promotion{
     }
 
     private void initUI(View view) {
-        lv= (ListView) view.findViewById(R.id.lvPromotion);
+        lv= (ListView) view.findViewById(R.id.lv);
         PromotionP p=new PromotionP(this);
         p.loadPromotion();
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -58,8 +59,31 @@ public class MCPromotionFragment extends Fragment implements Promotion{
                 }
             }
         });
+        refresh= (CanRefreshLayout)view.findViewById(R.id.refresh);
+        refresh.setOnRefreshListener(this);
+        refresh.setOnLoadMoreListener(this);
     }
 
+    CanRefreshLayout refresh;
+    @Override
+    public void onLoadMore() {
+        lv.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                refresh.loadMoreComplete();
+            }
+        }, 2000);
+    }
+
+    @Override
+    public void onRefresh() {
+        lv.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                refresh.refreshComplete();
+            }
+        }, 2000);
+    }
 
     @Override
     public void setPromotion(int[] images, String[] name) {
